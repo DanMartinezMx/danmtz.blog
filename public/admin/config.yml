@@ -2,7 +2,8 @@ backend:
   name: github
   repo: DanMartinezMx/danmtz.blog
   branch: main
-  site_domain: eldanmtz.com
+  auth_type: pkce
+  app_id: Ov23liikY6AeXrvxvk1Y
 
 media_folder: "src/assets"
 public_folder: "../assets"
