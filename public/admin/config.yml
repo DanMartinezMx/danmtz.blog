@@ -2,7 +2,7 @@ backend:
   name: github
   repo: DanMartinezMx/danmtz.blog
   branch: main
-  base_url: https://api.netlify.com
+  site_domain: eldanmtz.com
 
 media_folder: "src/assets"
 public_folder: "../assets"
