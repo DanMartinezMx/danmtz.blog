@@ -11,9 +11,9 @@ export default defineConfig({
   branch,
 
   // Get this from tina.io
-  clientId: "90dbf6df-e284-4c61-9bac-1a7e6a63ef54",
+  clientId: TINA_PUBLIC_CLIENT_ID,
   // Get this from tina.io
-  token: "decbae0ed7e159415e786b985db9fa26e4700bfd",
+  token: TINA_TOKEN,
 
   build: {
     outputFolder: "admin",
@@ -45,6 +45,33 @@ export default defineConfig({
             label: "Title",
             isTitle: true,
             required: true,
+          },
+          {
+            type: "string",
+            name: "description",
+            label: "Description",
+          },
+          {
+            type: "image",
+            name: "image",
+            label: "Cover Image",
+          },
+          {
+            type: "string",
+            name: "createdAt",
+            label: "Created At",
+            required: true,
+          },
+          {
+            type: "boolean",
+            name: "draft",
+            label: "Draft",
+          },
+          {
+            type: "string",
+            name: "tags",
+            label: "Tags",
+            list: true,
           },
           {
             type: "rich-text",
