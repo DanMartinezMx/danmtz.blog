@@ -4,11 +4,11 @@
 	"version": "1.0.2",
 	"packageManager": "pnpm@10.27.0",
 	"scripts": {
-		"dev": "astro dev",
-		"build": "astro build",
 		"start": "astro preview",
 		"preview": "astro preview",
 		"astro": "astro",
+		"dev": "tinacms dev -c \"astro dev\"",
+		"build": "tinacms build && astro build",
 		"postbuild": "pagefind --site dist",
 		"lint": "biome check .",
 		"lint:fix": "biome check --write ."
@@ -20,13 +20,15 @@
 		"@iconify-json/simple-icons": "^1.2.83",
 		"@iconify/utils": "^2.2.1",
 		"@shikijs/themes": "^4.1.0",
+		"@tinacms/cli": "^2.4.3",
 		"astro": "6.3.6",
 		"astro-expressive-code": "^0.42.0",
-		"sharp": "^0.34.5"
+		"sharp": "^0.34.5",
+		"tinacms": "^3.9.0"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.15",
-		"@types/node": "^24.3.0",
+		"@types/node": "^24.13.0",
 		"pagefind": "^1.5.2",
 		"shiki": "^4.1.0",
 		"typescript": "^5.9.2",
