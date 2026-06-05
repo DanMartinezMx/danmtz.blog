@@ -21,7 +21,7 @@ const {
 
 // https://astro.build/config
 const config = defineConfig({
-	site: "https://spectre.lou.gg",
+	site: "https://danmtz.blog",
 	output: "static",
 	integrations: [
 		expressiveCode({
@@ -30,21 +30,21 @@ const config = defineConfig({
 		mdx(),
 		sitemap(),
 		spectre({
-			name: "Spectre",
+			name: "Dan Mtz",
 			openGraph: {
 				home: {
-					title: "Spectre",
-					description: "A minimalistic theme for Astro.",
+					title: "Dan Mtz",
+					description: "No se we, ponle lo que sea",
 				},
 				blog: {
 					title: "Blog",
-					description: "News and guides for Spectre.",
+					description: "Por si te interesa saben en lo que ando",
 				},
 				projects: {
-					title: "Projects",
+					title: "Projectos",
 				},
 			},
-			giscus: {
+			/*giscus: {
 				repository: GISCUS_REPO,
 				repositoryId: GISCUS_REPO_ID,
 				category: GISCUS_CATEGORY,
@@ -54,7 +54,7 @@ const config = defineConfig({
 				reactionsEnabled: GISCUS_REACTIONS_ENABLED === "true",
 				emitMetadata: GISCUS_EMIT_METADATA === "true",
 				lang: GISCUS_LANG,
-			},
+			},*/
 		}),
 	],
 	adapter: node({
