@@ -2,10 +2,28 @@
 	{
 		"id": 1,
 		"icon": {
-			"type": "lucide",
-			"name": "github"
+			"type": "simple-icons",
+			"name": "instagram"
 		},
-		"text": "GitHub",
-		"link": "https://github.com/louisescher/spectre"
+		"text": "Instagram",
+		"link": "https://instagram.com/eldanmtz"
+	},
+	{
+		"id": 2,
+		"icon": {
+			"type": "simple-icons",
+			"name": "youtube"
+		},
+		"text": "YouTube",
+		"link": "https://www.youtube.com/@eldanmtz"
+	},
+	{
+		"id": 3,
+		"icon": {
+			"type": "simple-icons",
+			"name": "tiktok"
+		},
+		"text": "TikTok",
+		"link": "https://www.tiktok.com/@eldanmtz"
 	}
 ]

@@ -1,5 +1,26 @@
 [
 	{
-		"id": "guide"
+		"id": "Personal"
+	},
+	{
+		"id": "Random"
+	},
+	{
+		"id": "Cinema 🎬"
+	},
+	{
+		"id": "Videogames"
+	},
+	{
+		"id": "Travel"
+	},
+	{
+		"id": "Tech"
+	},
+	{
+		"id": "Foodies"
+	},
+	{
+		"id": "Coding"
 	}
 ]

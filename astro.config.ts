@@ -30,31 +30,31 @@ const config = defineConfig({
 		mdx(),
 		sitemap(),
 		spectre({
-			name: "Dan Mtz",
+			name: "Dan Mtz.",
 			openGraph: {
 				home: {
 					title: "Dan Mtz",
-					description: "No se we, ponle lo que sea",
+					description: "Write something funny",
 				},
 				blog: {
 					title: "Blog",
-					description: "Por si te interesa saben en lo que ando",
+					description: "Bloggin on 2026? what are you? Old?",
 				},
 				projects: {
-					title: "Projectos",
+					title: "Projects",
 				},
 			},
-			/*giscus: {
-				repository: GISCUS_REPO,
-				repositoryId: GISCUS_REPO_ID,
-				category: GISCUS_CATEGORY,
-				categoryId: GISCUS_CATEGORY_ID,
-				mapping: GISCUS_MAPPING as GiscusMapping,
-				strict: GISCUS_STRICT === "true",
-				reactionsEnabled: GISCUS_REACTIONS_ENABLED === "true",
-				emitMetadata: GISCUS_EMIT_METADATA === "true",
-				lang: GISCUS_LANG,
-			},*/
+			giscus: {
+				repository: "DanMartinezMx/danmtz.blog",
+				repositoryId: "R_kgDOSxpI3g",
+				category: "Announcements",
+				categoryId: "DIC_kwDOSxpI3s4C-iya",
+				mapping: "pathname" as GiscusMapping,
+				strict: "1" === "true",
+				reactionsEnabled: "1" === "true",
+				emitMetadata: "0" === "true",
+				lang: "en",
+			},
 		}),
 	],
 	adapter: node({

@@ -17,6 +17,7 @@
 		"@astrojs/mdx": "5.0.6",
 		"@astrojs/node": "10.1.1",
 		"@astrojs/sitemap": "3.7.2",
+		"@astrojs/vercel": "^10.0.8",
 		"@iconify-json/lucide": "^1.2.108",
 		"@iconify-json/simple-icons": "^1.2.83",
 		"@iconify/utils": "^2.2.1",

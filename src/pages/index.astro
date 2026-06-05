@@ -56,12 +56,31 @@ const { Content: About } = await render(about!);
 			</ul>
 		</Card>
 		<Card>
-			<h3 class="no-mt">Socials</h3>
+			<div class="header-container">
+				<Icon
+					type="lucide"
+					name="user"
+					width={24}
+					height={24}
+					class="glow-icon"
+				/>
+				<h2>About me</h2>
+			</div>
+			<div class="prose">
+				<About />
+			</div>
+
+			<p></p>
+			<h2 class="no-mt">Socials</h2>
 			<ul class="overview-list">
 				{
 					socials.map((item) => (
 						<li>
-							<a href={item.data.link} class="socials-link">
+							<a
+								href={item.data.link}
+								target="_blank"
+								class="socials-link"
+							>
 								<Icon
 									type={item.data.icon.type}
 									name={item.data.icon.name as any}
@@ -76,23 +95,40 @@ const { Content: About } = await render(about!);
 				}
 			</ul>
 		</Card>
-	</div>
-	<div class="layout-grid-right" slot="right">
 		<Card>
 			<div class="header-container">
 				<Icon
 					type="lucide"
-					name="user"
+					name="briefcase-business"
 					width={24}
 					height={24}
 					class="glow-icon"
 				/>
-				<h2>About me</h2>
+				<h2>Work Experience</h2>
 			</div>
-			<div class="prose">
-				<About />
+			<div class="work-experience-container">
+				{
+					workExperience.reverse().map((entry) => (
+						<div class="work-experience-entry">
+							<span class="work-experience-duration">
+								{entry.data.duration}
+							</span>
+							<h3 class="work-experience-company">
+								{entry.data.company}
+							</h3>
+							<span class="work-experience-role">
+								{entry.data.title}
+							</span>
+							<p class="work-experience-desc">
+								{entry.data.description}
+							</p>
+						</div>
+					))
+				}
 			</div>
 		</Card>
+	</div>
+	<div class="layout-grid-right" slot="right">
 		<Card>
 			<div class="header-container">
 				<Icon
@@ -108,7 +144,9 @@ const { Content: About } = await render(about!);
 				{
 					posts
 						.sort(
-							(a, b) => b.data.createdAt.getTime() - a.data.createdAt.getTime(),
+							(a, b) =>
+								b.data.createdAt.getTime() -
+								a.data.createdAt.getTime(),
 						)
 						.slice(0, 2)
 						.map((post) => (
@@ -139,10 +177,16 @@ const { Content: About } = await render(about!);
 			<div class="content-container">
 				{
 					projects
-						.sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+						.sort(
+							(a, b) =>
+								b.data.date.getTime() - a.data.date.getTime(),
+						)
 						.slice(0, 2)
 						.map((project) => (
-							<a href={`/projects/${project.id}`} class="post-container">
+							<a
+								href={`/projects/${project.id}`}
+								class="post-container"
+							>
 								<div class="post-header">
 									<h3>{project.data.title}</h3>
 									<span class="post-date">
@@ -152,32 +196,6 @@ const { Content: About } = await render(about!);
 								<span>{project.data.description}</span>
 							</a>
 						))
-				}
-			</div>
-		</Card>
-		<Card>
-			<div class="header-container">
-				<Icon
-					type="lucide"
-					name="briefcase-business"
-					width={24}
-					height={24}
-					class="glow-icon"
-				/>
-				<h2>Work Experience</h2>
-			</div>
-			<div class="work-experience-container">
-				{
-					workExperience.reverse().map((entry) => (
-						<div class="work-experience-entry">
-							<span class="work-experience-duration">
-								{entry.data.duration}
-							</span>
-							<h3 class="work-experience-company">{entry.data.company}</h3>
-							<span class="work-experience-role">{entry.data.title}</span>
-							<p class="work-experience-desc">{entry.data.description}</p>
-						</div>
-					))
 				}
 			</div>
 		</Card>
