@@ -1,0 +1,24 @@
+backend:
+  name: github
+  repo: DanMartinezMx/danmtz.blog
+  branch: main
+  base_url: https://api.netlify.com
+
+media_folder: "src/assets"
+public_folder: "../assets"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "src/content/posts"
+    create: true
+    extension: "mdx"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Image", name: "image", widget: "image", required: false }
+      - { label: "Created At", name: "createdAt", widget: "string" }
+      - { label: "Draft", name: "draft", widget: "boolean", default: false }
+      - { label: "Tags", name: "tags", widget: "list" }
+      - { label: "Body", name: "body", widget: "markdown" }
