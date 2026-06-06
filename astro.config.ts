@@ -38,7 +38,7 @@ const config = defineConfig({
 				strict: false,
 				reactionsEnabled: true,
 				emitMetadata: false,
-				lang: "en",
+				lang: "es",
 			},
 		}),
 	],
