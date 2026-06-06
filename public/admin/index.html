@@ -10,6 +10,19 @@
 <body>
   <div id="nc-root"></div>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'DanMartinezMx/danmtz.blog',
+          branch: 'main',
+          auth_type: 'pkce',
+          app_id: 'Ov23liikY6AeXrvxvk1Y'
+        }
+      }
+    });
+  </script>
 </body>
 
 </html>
