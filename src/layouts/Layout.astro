@@ -46,7 +46,7 @@ const { title, description, image, pagefindIgnore, article } = Astro.props;
 		<meta name="og:image" content={image?.src || '/img/og.png'} />
 		<meta name="og:url" content={Astro.site} />
 		{!article && <meta name="og:type" content="website" />}
-		<meta name="og:locale" content="en" />
+		<meta name="og:locale" content="es_MX" />
 
 		{article && (
 			<meta name="og:type" content="article" />
@@ -68,6 +68,8 @@ const { title, description, image, pagefindIgnore, article } = Astro.props;
 		<meta name="twitter:image" content={image?.src || '/img/og.png'} />
 	</head>
 	<body>
+		    <Analytics />
+
 		<main data-pagefind-ignore={pagefindIgnore}>
 			<Navbar />
 			<LayoutGrid>
