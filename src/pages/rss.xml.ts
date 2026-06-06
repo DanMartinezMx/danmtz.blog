@@ -7,7 +7,7 @@ export async function GET(context: APIContext) {
 
     return rss({
         title: "Dan Mtz Blog",
-        description: "Blog personal — tech, soporte, cocina, gaming y vida.",
+        description: "Blog personal — tech, cocina, gaming y vida.",
         site: context.site!,
         items: posts.map((post) => ({
             title: post.data.title,

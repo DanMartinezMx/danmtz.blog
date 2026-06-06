@@ -26,4 +26,13 @@
 		"text": "TikTok",
 		"link": "https://www.tiktok.com/@eldanmtz"
 	}
+	{
+		"id": 5,
+		"icon": {
+			"type": "lucide",
+			"name": "rss"
+		},
+		"text": "RSS",
+		"link": "https://eldanmtz.com/rss.xml"
+	}
 ]
