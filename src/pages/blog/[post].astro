@@ -45,7 +45,10 @@ export const getStaticPaths = (async () => {
 		(post) => post.data.draft !== true,
 	);
 
-	return posts.map((post) => ({ params: { post: post.id }, props: { post } }));
+	return posts.map((post) => ({
+		params: { post: post.id },
+		props: { post },
+	}));
 }) satisfies GetStaticPaths;
 
 const { Content, headings } = await render(post);
@@ -62,7 +65,7 @@ const { Content, headings } = await render(post);
 >
 	<div class="left" slot="left">
 		<Card class="toc-card">
-			<h2 class="no-mt">Table of contents</h2>
+			<h2 class="no-mt">Tabla de contenido</h2>
 			<ol>
 				<li class="toc-li">
 					<a href={"#_top"} class="active">{post.data.title}</a>
@@ -94,16 +97,24 @@ const { Content, headings } = await render(post);
 						<span>{post.data.createdAt.toLocaleDateString()}</span>
 						<span>/</span>
 						<span
-							>{timeToRead(post)} minute{timeToRead(post) === 1 ? "" : "s"} to read</span
+							>{timeToRead(post)} minutos{
+								timeToRead(post) === 1 ? "" : "s"
+							} para leer</span
 						>
 						<span>/</span>
-						<span>Tags: {post.data.tags.map((tag) => tag.id).join(", ")}</span>
+						<span
+							>Tags: {
+								post.data.tags.map((tag) => tag.id).join(", ")
+							}</span
+						>
 					</div>
 				</div>
 			</div>
 			<Content />
 			<hr class="end-of-article" />
-			<a href="/blog" class="block-link" data-pagefind-ignore>← Back to blog</a>
+			<a href="/blog" class="block-link" data-pagefind-ignore
+				>← Regresa al blog</a
+			>
 		</Card>
 		{
 			giscus && (
@@ -121,10 +132,13 @@ const { Content, headings } = await render(post);
 							data-reactions-enabled={
 								giscus.reactionsEnabled === true ? "1" : "0"
 							}
-							data-emit-metadata={giscus.emitMetadata === true ? "1" : "0"}
+							data-emit-metadata={
+								giscus.emitMetadata === true ? "1" : "0"
+							}
 							data-input-position={giscus.commentsInput}
 							data-theme={
-								giscus.theme || "https://spectre.lou.gg/styles/giscus"
+								giscus.theme ||
+								"https://spectre.lou.gg/styles/giscus"
 							}
 							data-lang={giscus.lang}
 							data-loading="lazy"

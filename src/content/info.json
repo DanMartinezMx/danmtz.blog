@@ -5,7 +5,7 @@
 			"type": "lucide",
 			"name": "cake"
 		},
-		"text": "31 year old"
+		"text": "31 años"
 	},
 	{
 		"id": 2,
@@ -14,6 +14,6 @@
 			"name": "earth"
 		},
 		"type": "lucide",
-		"text": "Made in Mexico 🇲🇽"
+		"text": "Hecho en México 🇲🇽"
 	}
 ]

@@ -26,7 +26,7 @@ const config = defineConfig({
 					description: "Blog personal — Tech, Cocina, Gaming y la vida.",
 				},
 				projects: {
-					title: "Projectos",
+					title: "Proyectos",
 				},
 			},
 			giscus: {

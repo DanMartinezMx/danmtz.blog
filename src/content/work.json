@@ -1,23 +1,23 @@
 [
 	{
 		"id": 3,
-		"duration": "2022 - present",
+		"duration": "2022 - Presente",
 		"company": "e-Core",
 		"title": "Cloud Senior Support Engineer",
-		"description": "Fixing anyone problems within Confluence."
+		"description": "Arreglo problemas de Confluence para la gente"
 	},
 	{
 		"id": 2,
 		"duration": "2016 - 2022",
 		"company": "Softtek",
 		"title": "Support Engineer",
-		"description": "Application support for Southwest Airiles systems"
+		"description": "Soporte de Aplicaciones para SSouthwest Airiles"
 	},
 	{
 		"id": 1,
 		"duration": "2014 - 2016",
 		"company": "Universidad Tecnológica El Retoño",
-		"title": "IT Support",
-		"description": "Fixing computers, Networks and helped students installing Windows 😂"
+		"title": "Soporte IT",
+		"description": "Reparaba computadoras, redes y les instalaba Windows a alumnos 😂"
 	}
 ]
