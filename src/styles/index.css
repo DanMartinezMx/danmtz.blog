@@ -1,19 +1,81 @@
 .layout-grid-left,
+.layout-grid-center,
 .layout-grid-right {
 	display: flex;
 	flex-direction: column;
-	width: 90%;
+	width: 100%;
 	gap: 2rem;
 }
 
 @media screen and (max-width: 640px) {
 
 	.layout-grid-left,
+	.layout-grid-center,
 	.layout-grid-right {
 		gap: 1rem;
 	}
 }
 
+/* Desktop/tablet: show sidebars, hide mobile collapsibles */
+.desktop-only {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+
+.mobile-only {
+	display: none;
+}
+
+@media screen and (max-width: 900px) {
+	.desktop-only {
+		display: none;
+	}
+
+	.mobile-only {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-top: 1rem;
+	}
+}
+
+/* Mobile collapsible sections */
+.mobile-section {
+	cursor: pointer;
+}
+
+.mobile-section summary {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-size: 1.1rem;
+	font-weight: 600;
+	list-style: none;
+	padding: 0.5rem 0;
+}
+
+.mobile-section summary::-webkit-details-marker {
+	display: none;
+}
+
+.mobile-section summary::after {
+	content: "▸";
+	margin-left: auto;
+	transition: transform 0.2s ease;
+}
+
+.mobile-section[open] summary::after {
+	transform: rotate(90deg);
+}
+
+.mobile-section-content {
+	padding-top: 1rem;
+	border-top: 1px solid #353535;
+	margin-top: 0.5rem;
+}
+
+/* Shared styles */
 .flex-col-card {
 	display: flex;
 	flex-direction: column;

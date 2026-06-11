@@ -13,12 +13,6 @@ const path = Astro.url.pathname;
     </li>
     <li class="nav-separator">/</li>
     <li>
-      <a href="/projects" class:list={{ active: path.startsWith("/projects") }}
-        >Proyectos</a
-      >
-    </li>
-    <li class="nav-separator">/</li>
-    <li>
       <input id="search" type="text" placeholder="Search (Ctrl+K)" />
       <div id="search-results"></div>
     </li>
@@ -85,7 +79,6 @@ const path = Astro.url.pathname;
     searchElement.placeholder = "";
     results.classList.add("active");
 
-    // initialize pagefind on first focus
     if (!pagefindInitialized) {
       try {
         window.pagefind = await import("/pagefind/pagefind.js");
@@ -115,7 +108,6 @@ const path = Astro.url.pathname;
   });
 
   searchElement?.addEventListener("input", async (e) => {
-    // only search if Pagefind is ready
     if (!pagefindInitialized) {
       return;
     }

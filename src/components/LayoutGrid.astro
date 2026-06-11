@@ -1,7 +1,10 @@
 ---
+
 ---
+
 <div class="layout-grid">
   <slot name="left" />
+  <slot name="center" />
   <slot name="right" />
 </div>
 
@@ -12,11 +15,22 @@
     align-content: stretch;
     display: grid;
     gap: 2rem;
-    grid-template-columns: 2fr 5fr;
+    grid-template-columns: 2fr 5fr 2fr;
     grid-template-rows: auto;
   }
 
   @media screen and (max-width: 1380px) {
+    .layout-grid {
+      grid-template-columns: 2fr 5fr;
+    }
+
+    .layout-grid :global([slot="right"]),
+    .layout-grid > :nth-child(3) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
     .layout-grid {
       grid-template-columns: 1fr;
     }
