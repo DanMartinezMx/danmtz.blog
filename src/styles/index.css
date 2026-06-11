@@ -83,14 +83,14 @@
 	margin-bottom: 0.5rem;
 }
 
-.work-experience-role {
-	margin-bottom: 0.75rem;
-}
-
 .socials-link {
 	color: white;
 	display: flex;
 	flex-direction: row;
 	gap: 0.75rem;
 	align-items: center;
+}
+
+.work-experience-role {
+	margin-bottom: 0.75rem;
 }
