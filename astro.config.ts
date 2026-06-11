@@ -29,17 +29,6 @@ const config = defineConfig({
 					title: "Proyectos",
 				},
 			},
-			giscus: {
-				repository: "DanMartinezMx/danmtz.blog",
-				repositoryId: "R_kgDOSxpI3g",
-				category: "Announcements",
-				categoryId: "DIC_kwDOSxpI3s4C-iya",
-				mapping: "pathname" as GiscusMapping,
-				strict: false,
-				reactionsEnabled: true,
-				emitMetadata: false,
-				lang: "es",
-			},
 		}),
 	],
 });
