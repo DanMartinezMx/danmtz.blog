@@ -44,7 +44,6 @@ const { title, description, image, pagefindIgnore, keywords, article } = Astro.p
 		<meta name="theme-color" content={themeColor}>
 
 		<link rel="canonical" href={Astro.url} />
-
 		<meta name="og:title" content={title} />
 		{description && <meta name="og:description" content={description} />}
 		<meta name="og:image" content={image?.src || '/img/og.png'} />
@@ -52,16 +51,11 @@ const { title, description, image, pagefindIgnore, keywords, article } = Astro.p
 		{!article && <meta name="og:type" content="website" />}
 		<meta name="og:locale" content="es_MX" />
 
-		{article && (
-			<meta name="og:type" content="article" />
-			<meta property="article:published_time" content={article.createdAt.toISOString()} />
-			<meta name="author" content={name} />
-			{article.category && <meta property="article:section" content={article.category} />}
-		)}
-
-		{article && article.updatedAt && (
-			<meta property="article:modified_time" content={article.updatedAt.toISOString()} />
-		)}
+		{article && <meta name="og:type" content="article" />}
+		{article && <meta property="article:published_time" content={article.createdAt.toISOString()} />}
+		{article && <meta name="author" content={name} />}
+		{article && article.category && <meta property="article:section" content={article.category} />}
+		{article && article.updatedAt && <meta property="article:modified_time" content={article.updatedAt.toISOString()} />}
 
 		<meta name="twitter:card" content="summary_large_image" />
 		{twitterHandle && (
