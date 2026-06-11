@@ -25,6 +25,9 @@ const config = defineConfig({
 					title: "Blog",
 					description: "Blog personal — Tech, Cocina, Gaming y la vida.",
 				},
+				projects: {
+					title: "Proyectos",
+				},
 			},
 		}),
 	],
