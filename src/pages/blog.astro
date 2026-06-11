@@ -8,7 +8,9 @@ import Icon from "../components/Icon.astro";
 import Layout from "../layouts/Layout.astro";
 
 const posts = await getCollection("posts", (post) => post.data.draft !== true);
-const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
+const categories = posts.flatMap((post) =>
+  post.data.categories.map((cat) => cat.id),
+);
 ---
 
 <Layout
@@ -21,10 +23,10 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
       <h2 class="no-mt">Filtro</h2>
       <ul class="tags-list">
         {
-          Array.from(new Set(tags)).map((tag) => (
+          Array.from(new Set(categories)).map((category) => (
             <li>
-              <a class="blog-tag" href="/blog" data-tag={tag}>
-                {tag}
+              <a class="blog-tag" href="/blog" data-tag={category}>
+                {category}
               </a>
             </li>
           ))
@@ -54,7 +56,7 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
               <a
                 href={`/blog/${post.id}`}
                 class="post-container"
-                data-tags={post.data.tags.map((tag) => tag.id).join(",")}
+                data-tags={post.data.categories.map((cat) => cat.id).join(",")}
               >
                 <div class="post-header">
                   <h3>{post.data.title}</h3>
@@ -84,7 +86,6 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
   function updatePostsVisibility() {
     posts.forEach((post) => {
       const postTags = post.dataset.tags!.split(",");
-      // if there are selected tags and the post does not have all of them, hide the post
       if (
         selectedTags.size > 0 &&
         ![...selectedTags].every((tag) => postTags.includes(tag))
@@ -97,7 +98,6 @@ const tags = posts.flatMap((post) => post.data.tags.map((tag) => tag.id));
   }
 
   function updateURL() {
-    // create a "clean" URL for the current page before adding the new query parameters
     const newUrl = new URL(window.location.pathname, window.location.origin);
     if (selectedTags.size > 0) {
       newUrl.searchParams.set("tags", [...selectedTags].join(","));

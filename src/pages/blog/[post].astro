@@ -3,7 +3,6 @@ import "../../styles/article.css";
 
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
-import { giscus } from "spectre:globals";
 import type { GetStaticPaths } from "astro";
 import Card from "../../components/Card.astro";
 import ImageGlow from "../../components/ImageGlow.astro";
@@ -59,9 +58,11 @@ const { Content, headings } = await render(post);
 	title={post.data.title}
 	description={post.data.description}
 	image={post.data.image}
+	keywords={post.data.tags}
 	article={{
 		createdAt: post.data.createdAt,
 		updatedAt: post.data.updatedAt,
+		category: post.data.categories.map((cat) => cat.id).join(", "),
 	}}
 >
 	<div class="left" slot="left">
@@ -104,8 +105,10 @@ const { Content, headings } = await render(post);
 						>
 						<span>/</span>
 						<span
-							>Tags: {
-								post.data.tags.map((tag) => tag.id).join(", ")
+							>{
+								post.data.categories
+									.map((cat) => cat.id)
+									.join(", ")
 							}</span
 						>
 					</div>

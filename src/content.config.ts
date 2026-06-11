@@ -48,8 +48,8 @@ const workExperience = defineCollection({
 	}),
 });
 
-const tags = defineCollection({
-	loader: file("src/content/tags.json"),
+const categories = defineCollection({
+	loader: file("src/content/categories.json"),
 	schema: z.object({
 		id: z.string(),
 	}),
@@ -63,7 +63,8 @@ const posts = defineCollection({
 			createdAt: z.coerce.date(),
 			updatedAt: z.coerce.date().optional(),
 			description: z.string(),
-			tags: z.array(reference("tags")),
+			categories: z.array(reference("categories")),
+			tags: z.array(z.string()).optional(),
 			draft: z.boolean().optional().default(false),
 			image: image().optional(),
 		}),
@@ -89,7 +90,7 @@ const projects = defineCollection({
 });
 
 export const collections = {
-	tags,
+	categories,
 	posts,
 	projects,
 	other,

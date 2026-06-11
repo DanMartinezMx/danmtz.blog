@@ -2,7 +2,7 @@ import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { defineConfig } from "astro/config";
 import expressiveCode from "astro-expressive-code";
-import spectre, { type GiscusMapping } from "./package/src";
+import spectre from "./package/src";
 import { spectreDark } from "./src/ec-theme";
 
 const config = defineConfig({
