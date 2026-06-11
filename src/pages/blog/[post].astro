@@ -117,15 +117,12 @@ const { Content, headings } = await render(post);
 				>← Regresa al blog</a
 			>
 		</Card>
-		{
-			giscus && (
-				<Card>
-					<div class="comments" data-pagefind-ignore>
-						<Comments slug={`/posts/${post.id}/`} />
-					</div>
-				</Card>
-			)
-		}
+
+		<Card>
+			<div class="comments" data-pagefind-ignore>
+				<Comments slug={`/posts/${post.id}/`} />
+			</div>
+		</Card>
 	</article>
 </Layout>
 <script src="../../scripts/toc.ts"></script>
